@@ -42,6 +42,7 @@ namespace WpfApp1
             services.AddTransient<MainWindow>();
 
             services.AddSingleton<IConfiguration>(AddConfiguration());
+            services.AddSingleton<AppState>();
         }
 
         protected override void OnStartup(StartupEventArgs e)
