@@ -10,5 +10,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <local:UserControl1 />
+        <TextBlock x:Name="MyMessage" />
     </Grid>
 </rxui:ReactiveWindow>

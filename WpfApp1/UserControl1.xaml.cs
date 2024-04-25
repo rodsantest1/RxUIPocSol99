@@ -3,11 +3,16 @@
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class UserControl1 
+    public partial class UserControl1
     {
-        public UserControl1()
-        {
-            InitializeComponent();
-        }
+        //private readonly IConfiguration _config;
+
+        //public UserControl1(IConfiguration config)
+        //{
+        //    InitializeComponent();
+        //    _config = config;
+
+        //    MyMessage.Text = $"Hello {_config.GetValue<string>("hello")}";
+        //}
     }
 }
