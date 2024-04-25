@@ -1,6 +1,4 @@
-﻿using ReactiveUI;
-
-namespace WpfApp1
+﻿namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
