@@ -18,10 +18,10 @@ namespace WpfApp1
             Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
 
             // Register services
-            Locator.CurrentMutable.RegisterConstant(new MyAppState(), typeof(IMyAppState));
+            Locator.CurrentMutable.RegisterConstant(new MyAppState());
 
             // Retrieve services
-            var myService = Locator.Current.GetService<IMyAppState>();
+            var myService = Locator.Current.GetService<MyAppState>();
 
             //var x = myService.MyProperty;
 
@@ -38,7 +38,7 @@ namespace WpfApp1
         }
     }
 
-    internal class MyAppState : IMyAppState
+    internal class MyAppState
     {
         string _savingTime;
         public MyAppState()
@@ -51,8 +51,4 @@ namespace WpfApp1
 
     }
 
-    internal interface IMyAppState
-    {
-        public string MyProperty { get; set; }
-    }
 }
