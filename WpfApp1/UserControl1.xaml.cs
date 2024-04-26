@@ -1,4 +1,6 @@
-﻿namespace WpfApp1
+﻿using Splat;
+
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for UserControl1.xaml
@@ -8,6 +10,12 @@
         public UserControl1()
         {
             InitializeComponent();
+
+
+            // Retrieve services
+            var myService = Locator.Current.GetService<IMyAppState>();
+
+            MyUc1Message.Text = myService.MyProperty;
         }
     }
 }

@@ -8,7 +8,8 @@
              xmlns:local="clr-namespace:WpfApp1"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="User Control 1" />
-    </Grid>
+    <StackPanel>
+        <TextBlock x:Name="MyUc1Message" Text="User Control 1" />
+        <Button x:Name="Button1" Content="Button1" />
+    </StackPanel>
 </rxui:ReactiveUserControl>
