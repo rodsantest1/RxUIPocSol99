@@ -13,9 +13,9 @@ namespace WpfApp1
 
 
             // Retrieve services
-            var myService = Locator.Current.GetService<MyAppState>();
+            var myAppState = Locator.Current.GetService<MyAppState>();
 
-            MyUc1Message.Text = myService.MyProperty;
+            MyUc1Message.Text = myAppState.MyProperty;
         }
     }
 }
