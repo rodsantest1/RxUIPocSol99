@@ -9,6 +9,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <local:UserControl1 />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="375*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="MyMessage" Grid.RowSpan="2" Grid.Row="0" />
+        <rxui:ViewModelViewHost 
+       x:Name="host"
+       HorizontalContentAlignment="Stretch"
+       VerticalContentAlignment="Stretch" Grid.RowSpan="2" Grid.Row="1"/>
     </Grid>
 </rxui:ReactiveWindow>

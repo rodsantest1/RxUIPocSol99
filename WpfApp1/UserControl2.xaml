@@ -9,6 +9,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="User Control 2" />
+        <TextBlock Text="Welcom to User Control 2" />
     </Grid>
 </rxui:ReactiveUserControl>
