@@ -1,11 +1,15 @@
-﻿using ReactiveUI;
+﻿using Microsoft.Extensions.Configuration;
+using ReactiveUI;
 using Splat;
+using System.Configuration;
+using System.IO;
 using System.Reflection;
 
 namespace WpfApp1
 {
     public partial class App
     {
+        public IConfiguration Configuration { get; private set; }
         public App()
         {
             // A helper method that will register all classes that derive off IViewFor 
@@ -19,7 +23,18 @@ namespace WpfApp1
             // Retrieve services
             var myService = Locator.Current.GetService<IMyAppState>();
 
-            var x = myService.MyProperty;
+            //var x = myService.MyProperty;
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            Configuration = builder.Build();
+
+            // Now you can access settings like this:
+            var mySetting = Configuration["hello"];
+
+            myService.MyProperty += $" Hello Locator {mySetting}";
         }
     }
 
@@ -29,13 +44,15 @@ namespace WpfApp1
         public MyAppState()
         {
             _savingTime = DateTime.Now.ToString();
+            MyProperty = $"Hello {_savingTime}";
         }
 
-        public string? MyProperty { get => $"Hello Locator {_savingTime}"; }
+        public string MyProperty { get; set; }
+
     }
 
     internal interface IMyAppState
     {
-        public string MyProperty { get; }
+        public string MyProperty { get; set; }
     }
 }
