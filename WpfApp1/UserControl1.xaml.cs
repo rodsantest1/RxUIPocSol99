@@ -1,12 +1,13 @@
 ﻿using ReactiveUI;
 using Splat;
+using System.Reactive.Disposables;
 
 namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class UserControl1 
+    public partial class UserControl1
     {
         public UserControl1()
         {
@@ -23,13 +24,15 @@ namespace WpfApp1
                 .WhenActivated(
                     disposables =>
                     {
-                        
+                        this
+                            .BindCommand(this.ViewModel, x => x.AddDinosaurCommand, x => x.Button1)
+                            .DisposeWith(disposables);
+
+                        this
+                            .Bind(this.ViewModel, x => x.MyPropertyOnVM1, x => x.MyUc1Message.Text)
+                            .DisposeWith(disposables);
                     });
         }
 
-        private void Button1_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            
-        }
     }
 }

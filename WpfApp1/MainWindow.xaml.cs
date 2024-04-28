@@ -28,7 +28,7 @@ namespace WpfApp1
                     disposables =>
                     {
                         this
-                            .OneWayBind(this.ViewModel, x => x.UC2ViewModel, x => x.host.ViewModel)
+                            .OneWayBind(this.ViewModel, x => x.UC1ViewModel, x => x.host.ViewModel)
                             .DisposeWith(disposables);
                     });
         }
