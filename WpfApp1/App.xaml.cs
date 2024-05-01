@@ -1,9 +1,6 @@
 ﻿using ReactiveUI;
 using Splat;
-using System.Configuration;
-using System.Data;
 using System.Reflection;
-using System.Windows;
 
 namespace WpfApp1
 {
