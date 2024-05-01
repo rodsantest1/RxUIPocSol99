@@ -8,7 +8,7 @@
         public MainWindow()
         {
             InitializeComponent();
-            ViewModel = new AppViewModel();
+            ViewModel = new MainWindowViewModel();
         }
     }
 }

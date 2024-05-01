@@ -2,7 +2,7 @@
 
 namespace WpfApp1
 {
-    public class AppViewModel : ReactiveObject
+    public class MainWindowViewModel : ReactiveObject
     {
     }
 }
