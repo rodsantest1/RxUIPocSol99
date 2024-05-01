@@ -1,4 +1,6 @@
 ﻿using ReactiveUI;
+using System.Reactive;
+using System.Reactive.Disposables;
 
 namespace WpfApp1
 {
@@ -15,7 +17,9 @@ namespace WpfApp1
                 .WhenActivated(
                     disposables =>
                     {
-
+                        this
+                           .BindCommand(this.ViewModel, x => x.LoadCommand, x => x.LoadButton)
+                           .DisposeWith(disposables);
 
                     });
         }

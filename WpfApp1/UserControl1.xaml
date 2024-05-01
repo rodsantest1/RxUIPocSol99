@@ -10,5 +10,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock Text="User Control 1" />
+        <Button x:Name="LoadButton" Content="Load" Width="50" Height="50" />
     </Grid>
 </rxui:ReactiveUserControl>
