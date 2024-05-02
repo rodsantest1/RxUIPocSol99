@@ -1,4 +1,6 @@
 ﻿using ReactiveUI;
+using Splat;
+using System.Reactive.Disposables;
 
 namespace WpfApp1
 {
@@ -10,6 +12,19 @@ namespace WpfApp1
         public UserControl2()
         {
             InitializeComponent();
+
+            this
+                .WhenActivated(
+                    disposables =>
+                    {
+                        this
+                           .BindCommand(this.ViewModel, x => x.BackCommand, x => x.BackButton)
+                           .DisposeWith(disposables);
+
+                        this
+                           .Bind(this.ViewModel, x => x.MyUC2Message, x => x.MyUC2Message.Text);
+
+                    });
         }
     }
 }
