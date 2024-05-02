@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using System.Reactive;
 
 namespace WpfApp1
 {
@@ -12,5 +13,8 @@ namespace WpfApp1
         public string? UrlPathSegment => "test";
 
         public IScreen HostScreen => _hostScreen;
+
+        public ReactiveCommand<Unit, IRoutableViewModel> BackCommand => _hostScreen.Router.NavigateBack;
+
     }
 }

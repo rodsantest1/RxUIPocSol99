@@ -14,8 +14,9 @@ namespace WpfApp1
         {
             _hostScreen = hostScreen;
 
-            this.loadCommand = ReactiveCommand.Create(() => {
-                this._hostScreen.Router.Navigate.Execute(new UserControl2ViewModel(_hostScreen)).Select(_=>Unit.Default);
+            this.loadCommand = ReactiveCommand.Create(() =>
+            {
+                this._hostScreen.Router.Navigate.Execute(new UserControl2ViewModel(_hostScreen)).Select(_ => Unit.Default);
             });
 
         }
